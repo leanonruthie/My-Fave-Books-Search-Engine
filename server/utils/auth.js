@@ -1,3 +1,5 @@
+// TODO from README - `auth.js`: Update the auth middleware function to work with the GraphQL API.
+
 const jwt = require('jsonwebtoken');
 
 // set token secret and expiration date
@@ -28,8 +30,11 @@ module.exports = {
       return res.status(400).json({ message: 'invalid token!' });
     }
 
+    // Code Reference: MERN/01-Activities/25-Ins_Resolver-Context/server/utils/auth.js - return the request object so it can be passed to the resolver as `context`
+    return req;
+
     // send to next endpoint
-    next();
+    // next();
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
