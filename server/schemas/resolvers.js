@@ -1,6 +1,6 @@
 // TODO from README - `resolvers.js`: Define the query and mutation functionality to work with the Mongoose models.
 
-// Code Reference: MERN/01-Activities/26-Stu_Resolver-Context/Unsolved/server/schemas/resolvers.js
+// Code Reference: 26-Stu_Resolver-Context/Solved/server/schemas/resolvers.js
 
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');

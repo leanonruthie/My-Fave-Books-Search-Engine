@@ -1,5 +1,5 @@
 // TODO from README - `auth.js`: Update the auth middleware function to work with the GraphQL API.
-
+// Code Reference: 26-Stu_Resolver-Context/Solved/server/utils/auth.js
 const jwt = require('jsonwebtoken');
 
 // set token secret and expiration date
@@ -7,10 +7,10 @@ const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
 module.exports = {
-  // function for our authenticated routes (delete next from parameters after comparing it against other code)
-  authMiddleware: function (req, res) {
+  // function for our authenticated routes (delete res and next from parameters after comparing it against other code)
+  authMiddleware: function (req) {
     // allows token to be sent via  req.query or headers
-    let token = req.query.token || req.headers.authorization;
+    let token = req.body.token || req.query.token || req.headers.authorization;
 
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
@@ -18,7 +18,7 @@ module.exports = {
     }
 
     if (!token) {
-      return res.status(400).json({ message: 'You have no token!' });
+      return req;
     }
 
     // verify token and get user data out of it
@@ -27,10 +27,8 @@ module.exports = {
       req.user = data;
     } catch {
       console.log('Invalid token');
-      return res.status(400).json({ message: 'invalid token!' });
     }
 
-    // Code Reference: MERN/01-Activities/25-Ins_Resolver-Context/server/utils/auth.js - return the request object so it can be passed to the resolver as `context`
     return req;
 
     // send to next endpoint

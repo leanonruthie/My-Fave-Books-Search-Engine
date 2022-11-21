@@ -2,10 +2,14 @@
 
 const express = require('express');
 
-// CODE REFERENCE: MERN/01-Activities/26-Stu_Resolver-Context/Unsolved/server/server.js
+// CODE REFERENCE: 26-Stu_Resolver-Context/Solved/server/server.js
 const { ApolloServer } = require('apollo-server-express');
+const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
+const db = require('./config/connection');
+const PORT = process.env.PORT || 3001;
+const app = express();
 
 const server = new ApolloServer({
   typeDefs,
@@ -13,14 +17,8 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-const path = require('path');
-const db = require('./config/connection');
-
 // testing without below after comparing it against other code
 // const routes = require('./routes');
-
-const app = express();
-const PORT = process.env.PORT || 3001;
 
 // testing for extended: false after comparing it against other code
 app.use(express.urlencoded({ extended: false }));
@@ -33,8 +31,6 @@ if (process.env.NODE_ENV === 'production') {
 
 // testing without below after comparing it against other code
 // app.use(routes);
-
-// CODE REFERENCE: MERN/01-Activities/26-Stu_Resolver-Context/Unsolved/server/server.js
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
