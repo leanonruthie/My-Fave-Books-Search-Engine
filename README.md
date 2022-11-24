@@ -27,6 +27,6 @@ THEN that book no longer saved in my list
 ## Deployment
 
 * [My Heroku]()
-* [GitHub Repository]()
+* [GitHub Repository](https://github.com/leanonruthie/My-Fave-Books-Search-Engine.git)
 
 ## Video Demo (See Below):
