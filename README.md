@@ -20,7 +20,7 @@ WHEN I sign up and log in
 THEN I am able to save my favorite book using the "Save" button on top of generic book search results
 WHEN I click on the option to see my saved books
 THEN I am presented with my favorites books and each book as a detailed description
-WHEN I click on the Remove button 
+WHEN I click on the Delete button 
 THEN that book no longer saved in my list
 ```
 
