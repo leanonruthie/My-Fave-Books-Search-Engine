@@ -1,21 +1,21 @@
 // TODO from README - `server.js`: Implement the Apollo Server and apply it to the Express server as middleware.
 
-const express = require('express');
-
 // CODE REFERENCE: 26-Stu_Resolver-Context/Solved/server/server.js
+const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
 });
-
-const app = express();
-const PORT = process.env.PORT || 3001;
 
 // testing without below after comparing it against other code
 // const routes = require('./routes');
