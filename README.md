@@ -3,7 +3,7 @@
 ## User Story
 
 ```md
-AS A coding bootcamp student who hasn't had the time to read lately
+AS A coding bootcamp student who has not had the time to read lately
 I WANT to go back and read my favorite books
 SO THAT I can keep a list of why I fell in love with them in the first place and make sure to purchase any of my favorite books in paperback/hardcover at home
 ```
