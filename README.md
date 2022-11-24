@@ -13,7 +13,7 @@ SO THAT I can keep a list of why I fell in love with them in the first place and
 ```md
 GIVEN my-fave-books-search-engine
 WHEN I load the application
-THEN I am land on the Login/Signup page followed by a book search bar
+THEN I land on the Login/Signup page followed by a book search bar
 WHEN I am not logged in
 THEN I am still able to search for generic books
 WHEN I sign up and log in
