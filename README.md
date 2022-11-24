@@ -24,18 +24,9 @@ WHEN I click on the Remove button
 THEN that book no longer saved in my list
 ```
 
-## Screenshots
-
-* My Database
-<img src="">
-
-* Saved Books Page
-<img src="">
-
-* Search Books Page
-<img src="">
-
 ## Deployment
 
 * [My Heroku]()
 * [GitHub Repository]()
+
+## Video Demo (See Below):
